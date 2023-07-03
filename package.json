@@ -1,5 +1,22 @@
 {
+  "name": "mern_shop_ariel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArielGuerrero05/MERN_SHOP_ARIEL-Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArielGuerrero05/MERN_SHOP_ARIEL-Backend/issues"
+  },
+  "homepage": "https://github.com/ArielGuerrero05/MERN_SHOP_ARIEL-Backend#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "typescript": "^5.1.6"
   }
 }
