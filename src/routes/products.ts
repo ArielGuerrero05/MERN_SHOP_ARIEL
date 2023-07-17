@@ -3,7 +3,7 @@ import { Product } from '../models/product';
 
 const productsRouter = express.Router();
 
-productsRouter.get(`/`, async(req, res) => {
+productsRouter.get('/', async(req, res) => {
     const productList = await Product.find();
 
     if(!productList) {
@@ -14,7 +14,7 @@ productsRouter.get(`/`, async(req, res) => {
 
     res.send(productList);
 });
-productsRouter.post(`/`, (req, res) => {
+productsRouter.post('/', (req, res) => {
     const product = new Product({
         name: req.body.name,
         image: req.body.image

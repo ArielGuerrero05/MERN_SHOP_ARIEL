@@ -3,61 +3,58 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Product = void 0;
+exports.Order = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
-const productSchema = new mongoose_1.default.Schema({
+const orderSchema = new mongoose_1.default.Schema({
     id: {
         type: String,
         required: true,
     },
-    name: {
+    orderItems: [{
+            type: mongoose_1.default.Schema.Types.ObjectId,
+            ref: 'Product',
+            required: true,
+        }],
+    shippingAddress1: {
         type: String,
         required: true,
     },
-    description: {
+    shippingAddress2: {
         type: String,
         required: true,
     },
-    richDescription: {
-        type: String,
-        required: true,
-    },
-    image: {
+    city: {
         type: String,
         default: '',
     },
-    images: {
-        type: [String],
+    zip: {
+        type: String,
         required: true,
     },
-    brand: {
+    country: {
         type: String,
         default: '',
     },
-    price: {
+    phone: {
+        type: String,
+        default: '',
+    },
+    status: {
+        type: String,
+        required: true,
+    },
+    totalPrice: {
         type: Number,
-        default: 0,
+        required: true,
     },
-    category: {
+    user: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        ref: 'Categoria',
-        required: true,
+        ref: 'User',
+        default: null,
     },
-    countInStock: {
-        type: Number,
-        required: true,
-    },
-    rating: {
-        type: Number,
-        default: 0,
-    },
-    isFeatured: {
-        type: Boolean,
-        default: false,
-    },
-    dateCreated: {
+    dateOrdered: {
         type: Date,
         default: Date.now,
     },
 });
-exports.Product = mongoose_1.default.model('Product', productSchema);
+exports.Order = mongoose_1.default.model('Order', orderSchema);

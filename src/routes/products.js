@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const product_1 = require("../models/product");
 const productsRouter = express_1.default.Router();
-productsRouter.get(`/`, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+productsRouter.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const productList = yield product_1.Product.find();
     if (!productList) {
         res.status(500).json({
@@ -24,7 +24,7 @@ productsRouter.get(`/`, (req, res) => __awaiter(void 0, void 0, void 0, function
     }
     res.send(productList);
 }));
-productsRouter.post(`/`, (req, res) => {
+productsRouter.post('/', (req, res) => {
     const product = new product_1.Product({
         name: req.body.name,
         image: req.body.image
