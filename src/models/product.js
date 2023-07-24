@@ -38,11 +38,11 @@ const productSchema = new mongoose_1.default.Schema({
         type: Number,
         default: 0,
     },
-    category: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
-        ref: 'Categoria',
-        required: true,
-    },
+    /*category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Categoria',
+      required: true,
+    },*/
     countInStock: {
         type: Number,
         required: true,
